@@ -1,0 +1,30 @@
+Algoritmo sin_titulo
+	definir frase Como Caracter
+	leer frase
+	   buscar(frase)	
+FinAlgoritmo
+subproceso buscar(frase por referencia)
+	definir v , vocal Como Caracter
+	definir c Como Entero
+	para c=0 hasta Longitud(frase) hacer
+		v=Subcadena(frase,c,c)
+		si (v="a" o v="e" o v="i" o v="o" o v ="u") Entonces
+		    vocal=Subcadena(frase,c,c)
+		    quitar(frase,vocal,c)
+		FinSi
+	FinPara
+	mostrar frase
+FinSubProceso
+
+subproceso quitar(frase por referencia ,vocal por referencia,c)
+	definir x como entero
+	definir fraccion como caracter
+	Para x=(c+1) hasta longitud(frase)
+		si Subcadena(frase,x,x) = vocal entonces 
+			fraccion= Concatenar(Subcadena(frase,0,x-1),"")
+			frase =fraccion + subcadena(frase,x+1,longitud(frase))
+			
+		Fin si
+	FinPara
+FinSubProceso
+	
